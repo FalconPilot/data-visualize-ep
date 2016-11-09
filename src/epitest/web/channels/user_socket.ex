@@ -2,7 +2,7 @@ defmodule Epitest.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Epitest.RoomChannel
+  # channel "room:*", Epitest.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
