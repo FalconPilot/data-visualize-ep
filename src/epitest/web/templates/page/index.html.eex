@@ -1,1 +1,8 @@
-<h1>Bienvenue à l'APFDTCALDP !</h1>
+<h1 class="maintitle">Bienvenue à l'APFDTCALDP !</h1>
+<%= form_for @conn, "/fetch", [as: :fetch], fn f -> %>
+  <label>Identifiant</label>
+  <%= text_input f, :login %>
+  <label>Mot de passe</label>
+  <%= password_input f, :password %>
+  <%= submit "Obtenir" %>
+<% end %>

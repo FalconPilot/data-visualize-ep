@@ -16,7 +16,9 @@ defmodule Epitest.Router do
   scope "/", Epitest do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/",      PageController, :index
+
+    post "/fetch", PageController, :fetch
   end
 
   # Other scopes may use custom stacks.

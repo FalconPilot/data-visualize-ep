@@ -10,13 +10,11 @@ erl_crash.dump
 # Static artifacts
 /node_modules
 
-# Static data
-/data
-
 # Since we are building assets from web/static,
 # we ignore priv/static. You may want to comment
 # this depending on your deployment strategy.
 /priv/static/
+/priv/data/
 
 # The config/prod.secret.exs file by default contains sensitive
 # data and you should not commit it into version control.
