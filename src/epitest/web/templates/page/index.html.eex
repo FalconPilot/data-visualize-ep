@@ -1,4 +1,3 @@
-<h1 class="maintitle">Bienvenue à l'APFDTCALDP !</h1>
 <%= form_for @conn, "/fetch", [as: :fetch], fn f -> %>
   <label>Identifiant</label>
   <%= text_input f, :login %>
