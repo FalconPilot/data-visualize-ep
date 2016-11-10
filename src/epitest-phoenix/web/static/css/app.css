@@ -4,6 +4,9 @@
 
 :root {
   --blue-color: 66, 113, 188;
+  --fail-crash: 250, 100, 100;
+  --fail-nocrash: 250, 150, 100;
+  --passed: 150, 250, 150;
 }
 
 /*
@@ -17,6 +20,15 @@ body {
   font-family: "Georgia";
 }
 
+main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .maintitle {
   width: 100%;
   margin: 0 0 20px 0;
@@ -25,6 +37,70 @@ body {
   background-color: rgb(var(--blue-color));
   color: rgba(0, 0, 0, 0.6);
   box-shadow: 0px 2px 4px rgb(var(--blue-color));
+}
+
+/*
+**  Data view
+*/
+
+.graph-title {
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.graph-wrapper {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-wrapper {
+  position: relative;
+  margin: 5px auto;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bar-wrapper {
+  position: relative;
+  height: 100%;
+  width: 40px;
+}
+
+.data-bar {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  min-height: 2px;
+  bottom: 0;
+  align-self: flex-end;
+  background-color: rgb(220, 120, 100);
+  transition: 0.4s;
+  border-radius: 10px 10px 0 0;
+}
+
+.data-wrapper > p {
+  width: 100%;
+  margin: 0;
+  align-self: flex-end;
+  text-align: center;
+}
+
+.failcrash {
+  background-color: rgb(var(--fail-crash));
+}
+
+.failnocrash {
+  background-color: rgb(var(--fail-nocrash));
+}
+
+.passed {
+  background-color: rgb(var(--passed));
 }
 
 /*

@@ -1,1 +1,33 @@
-<%= fetch_data(@data) %>
+<h2 class="graph-title">Sur un total de <%= @data.total %> données</h2>
+<div class="graph-wrapper">
+  <!-- FAILED TESTS W/O CRASH -->
+  <div class="data-wrapper">
+    <div class="bar-wrapper">
+      <div class="data-bar failnocrash" id="bar_fail_nocrash"></div>
+    </div>
+    <p>
+      <label>Échecs sans crash</label>
+      <span id="data_fail_nocrash"><%= @data.fail_nocrash %></span>
+    </p>
+  </div>
+  <!-- FAILED TESTS W/ CRASH -->
+  <div class="data-wrapper">
+    <div class="bar-wrapper">
+      <div class="data-bar failcrash" id="bar_fail_crash"></div>
+    </div>
+    <p>
+      <label>Échecs avec crash</label>
+      <span id="data_fail_crash"><%= @data.fail_crash %></span>
+    </p>
+  </div>
+  <!-- PASSED TESTS -->
+  <div class="data-wrapper">
+    <div class="bar-wrapper">
+      <div class="data-bar passed" id="bar_passed"></div>
+    </div>
+    <p>
+      <label>Réussites</label>
+      <span id="data_passed"><%= @data.passed %></span>
+    </p>
+  </div>
+</div>

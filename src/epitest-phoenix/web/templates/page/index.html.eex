@@ -3,5 +3,9 @@
   <%= text_input f, :login %>
   <label>Mot de passe</label>
   <%= password_input f, :password %>
+  <label>Date</label>
+  <div class="date-wrapper">
+    <%= datetime_select f, :date %>
+  </div>
   <%= submit "Obtenir" %>
 <% end %>
