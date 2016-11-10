@@ -7,39 +7,6 @@ defmodule Epitest.PageController do
     render conn, "index.html"
   end
 
-  # Recursive requesting
-
-  def recreq([h|t], login, password, acc) do
-    case request(h, login, password) do
-      {:ok, data} ->
-        recreq t, login, password, [h|acc]
-      {:error, data} ->
-        recreq t, login, password, acc
-    end
-  end
-
-  def recreq(_, _login, _password, acc) do
-    Enum.reverse acc
-  end
-
-  def recreq(ulist, login, password) do
-    recreq ulist, login, password, []
-  end
-
-  # Fill url list
-
-  def list_fill([h|t], key, acc) do
-    list_fill t, key, [h[key]|acc]
-  end
-
-  def list_fill(_, _key, acc) do
-    Enum.reverse acc
-  end
-
-  def list_fill(list, key) do
-    list_fill list, key, []
-  end
-
   # Fetching request
 
   def fetch(conn, params) do
